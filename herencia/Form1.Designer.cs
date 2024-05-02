@@ -37,9 +37,9 @@ namespace herencia
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.valor1 = new System.Windows.Forms.TextBox();
+            this.valor2 = new System.Windows.Forms.TextBox();
+            this.resultado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // sumar
@@ -51,6 +51,7 @@ namespace herencia
             this.sumar.TabIndex = 0;
             this.sumar.Text = "Sumar";
             this.sumar.UseVisualStyleBackColor = true;
+            this.sumar.Click += new System.EventHandler(this.sumar_Click);
             // 
             // restar
             // 
@@ -73,6 +74,7 @@ namespace herencia
             this.multiplicar.TabIndex = 2;
             this.multiplicar.Text = "Multiplicar";
             this.multiplicar.UseVisualStyleBackColor = true;
+            this.multiplicar.Click += new System.EventHandler(this.multiplicar_Click);
             // 
             // dividir
             // 
@@ -93,6 +95,7 @@ namespace herencia
             this.borrar.TabIndex = 4;
             this.borrar.Text = "Borrar";
             this.borrar.UseVisualStyleBackColor = true;
+            this.borrar.Click += new System.EventHandler(this.borrar_Click);
             // 
             // label1
             // 
@@ -103,6 +106,7 @@ namespace herencia
             this.label1.Size = new System.Drawing.Size(80, 25);
             this.label1.TabIndex = 5;
             this.label1.Text = "Valor 1";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -124,35 +128,36 @@ namespace herencia
             this.label3.TabIndex = 7;
             this.label3.Text = "Resultado";
             // 
-            // textBox1
+            // valor1
             // 
-            this.textBox1.Location = new System.Drawing.Point(154, 50);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(180, 20);
-            this.textBox1.TabIndex = 8;
+            this.valor1.Location = new System.Drawing.Point(154, 50);
+            this.valor1.Name = "valor1";
+            this.valor1.Size = new System.Drawing.Size(180, 20);
+            this.valor1.TabIndex = 8;
+            this.valor1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // textBox2
+            // valor2
             // 
-            this.textBox2.Location = new System.Drawing.Point(154, 137);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(180, 20);
-            this.textBox2.TabIndex = 9;
+            this.valor2.Location = new System.Drawing.Point(154, 137);
+            this.valor2.Name = "valor2";
+            this.valor2.Size = new System.Drawing.Size(180, 20);
+            this.valor2.TabIndex = 9;
             // 
-            // textBox3
+            // resultado
             // 
-            this.textBox3.Location = new System.Drawing.Point(154, 228);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(180, 20);
-            this.textBox3.TabIndex = 10;
+            this.resultado.Location = new System.Drawing.Point(154, 228);
+            this.resultado.Name = "resultado";
+            this.resultado.Size = new System.Drawing.Size(180, 20);
+            this.resultado.TabIndex = 10;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(558, 302);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.resultado);
+            this.Controls.Add(this.valor2);
+            this.Controls.Add(this.valor1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -178,9 +183,9 @@ namespace herencia
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox valor1;
+        private System.Windows.Forms.TextBox valor2;
+        private System.Windows.Forms.TextBox resultado;
     }
 }
 
