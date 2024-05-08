@@ -13,36 +13,36 @@ namespace herencia
      */
     class operacion
     {
-            // declaración der variables que se usa la clase 
-            // clase principal que va a poder compartir (suma, resta, multi, division)
-            // cajas de memoria que guardan los valores y las repuestas (resultado)
-            // tipo de acceso      tipo de dato             nombre de dato 
-            protected int valor1;
-            protected int valor2;
-            protected int resultado;
+        // declaración der variables que se usa la clase 
+        // clase principal que va a poder compartir (suma, resta, multi, division)
+        // cajas de memoria que guardan los valores y las repuestas (resultado)
+        // tipo de acceso      tipo de dato             nombre de dato 
+        protected int valor1;
+        protected int valor2;
+        protected int resultado;
 
-            // atributos  de la clase de operacion
-            // metodos y funciones de la clase operacion 
-            /* los metodos que se ponen son las funciones de obtener
-             * el valor de la caja de texto y guardarlo en la memoria dentro de la 
-             * variable indicada (CONSTRUCTORES- Dato valor 1)*/
-            public int Valor1
-            {
-                get { return valor1; } //vamos por el valor de la caja de texto (OBTIENE)
-                set { valor1 = value; } // se guarda en la memoria
-            }
+        // atributos  de la clase de operacion
+        // metodos y funciones de la clase operacion 
+        /* los metodos que se ponen son las funciones de obtener
+         * el valor de la caja de texto y guardarlo en la memoria dentro de la 
+         * variable indicada (CONSTRUCTORES- Dato valor 1)*/
+        public int Valor1
+        {
+            get { return valor1; } //vamos por el valor de la caja de texto (OBTIENE)
+            set { valor1 = value; } // se guarda en la memoria
+        }
 
-            public int Valor2
-            {
-                get { return valor2; } //vamos por el valor de la caja de texto
-                set { valor2 = value; } // se guarda en la memoria
-            }
+        public int Valor2
+        {
+            get { return valor2; } //vamos por el valor de la caja de texto
+            set { valor2 = value; } // se guarda en la memoria
+        }
 
-            public int Resultado
-            {
-                get { return resultado; } //vamos por el valor de la caja de texto
-                set { resultado = value; } // se guarda en la memoria
-            }
+        public int Resultado
+        {
+            get { return resultado; } //vamos por el valor de la caja de texto
+            set { resultado = value; } // se guarda en la memoria
+        }
 
     }
     // CALSE HIJO que utilizará metodos de crear datos
@@ -91,17 +91,39 @@ namespace herencia
             return resultado = valor1 * valor2;
         }
     }
-            static class Program
+    // Clase para realizar la operación de división
+    class Dividir : operacion
+    {
+        // Método para realizar la división
+        public double operar(double v1, double v2)
+        {
+            // Verificar si el divisor es cero
+            if (v2 == 0)
             {
-                /// <summary>
-                /// Punto de entrada principal para la aplicación. 
-                /// </summary>
-                [STAThread]
-                static void Main()
-                {
-                    Application.EnableVisualStyles();
-                    Application.SetCompatibleTextRenderingDefault(false);
-                    Application.Run(new Form1());
-                }
+                // Mostrar un mensaje de alerta si se intenta dividir por cero
+                MessageBox.Show("No se puede dividir por cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return double.NaN; // Retornar NaN (Not a Number) para indicar un valor inválido
             }
- }
+            else
+            {
+                valor1 = (int)v1;
+                valor2 = (int)v2;
+                return resultado = valor1 / valor2;
+            }
+        }
+
+        static class Program
+        {
+            /// <summary>
+            /// Punto de entrada principal para la aplicación. 
+            /// </summary>
+            [STAThread]
+            static void Main()
+            {
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new Form1());
+            }
+        }
+    }
+}

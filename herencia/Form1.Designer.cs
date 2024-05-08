@@ -85,6 +85,7 @@ namespace herencia
             this.dividir.TabIndex = 3;
             this.dividir.Text = "Dividir";
             this.dividir.UseVisualStyleBackColor = true;
+            this.dividir.Click += new System.EventHandler(this.dividir_Click);
             // 
             // borrar
             // 
