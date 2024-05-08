@@ -17,28 +17,28 @@ namespace herencia
         // clase principal que va a poder compartir (suma, resta, multi, division)
         // cajas de memoria que guardan los valores y las repuestas (resultado)
         // tipo de acceso      tipo de dato             nombre de dato 
-        protected int valor1;
-        protected int valor2;
-        protected int resultado;
+        protected float valor1;
+        protected float valor2;
+        protected float resultado;
 
         // atributos  de la clase de operacion
         // metodos y funciones de la clase operacion 
         /* los metodos que se ponen son las funciones de obtener
          * el valor de la caja de texto y guardarlo en la memoria dentro de la 
          * variable indicada (CONSTRUCTORES- Dato valor 1)*/
-        public int Valor1
+        public float Valor1
         {
             get { return valor1; } //vamos por el valor de la caja de texto (OBTIENE)
             set { valor1 = value; } // se guarda en la memoria
         }
 
-        public int Valor2
+        public float Valor2
         {
             get { return valor2; } //vamos por el valor de la caja de texto
             set { valor2 = value; } // se guarda en la memoria
         }
 
-        public int Resultado
+        public float Resultado
         {
             get { return resultado; } //vamos por el valor de la caja de texto
             set { resultado = value; } // se guarda en la memoria
@@ -54,7 +54,7 @@ namespace herencia
         // Declarar valores de esta clase
         // atributos de esta clase
         // metodos de la clase
-        public int operar(int v1, int v2)
+        public float operar(float v1, float v2)
         {
             valor1 = v1; // accedemos al constructor de operacion
             valor2 = v2;
@@ -68,7 +68,7 @@ namespace herencia
         // Declarar valores de esta clase
         // atributos de esta clase
         // metodos de la clase
-        public int operar(int v1, int v2)
+        public float operar(float v1, float v2)
         {
             valor1 = v1; // accedemos al constructor de operacion
             valor2 = v2;
@@ -84,7 +84,7 @@ namespace herencia
         // Declarar valores de esta clase
         // atributos de esta clase
         // metodos de la clase
-        public int operar(int v1, int v2)
+        public float operar(float v1, float v2)
         {
             valor1 = v1; // accedemos al constructor de operacion
             valor2 = v2;
@@ -95,19 +95,19 @@ namespace herencia
     class Dividir : operacion
     {
         // Método para realizar la división
-        public double operar(double v1, double v2)
+        public float operar(float v1, float v2)
         {
             // Verificar si el divisor es cero
             if (v2 == 0)
             {
                 // Mostrar un mensaje de alerta si se intenta dividir por cero
                 MessageBox.Show("No se puede dividir por cero", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return double.NaN; // Retornar NaN (Not a Number) para indicar un valor inválido
+                return float.NaN; // Retornar NaN (Not a Number) para indicar un valor inválido
             }
             else
             {
-                valor1 = (int)v1;
-                valor2 = (int)v2;
+                valor1 = v1;
+                valor2 = v2;
                 return resultado = valor1 / valor2;
             }
         }
